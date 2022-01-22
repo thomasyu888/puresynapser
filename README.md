@@ -21,7 +21,7 @@ This package currently only works with the Synapse Personal Access token. You wi
 Sys.setenv(SYNAPSE_AUTH_TOKEN="tokenhere")
 ```
 
-Currently you may pass in any of the `GET`, `PUT`, `DELETE`, `POST`, rest calls covered under this endpoint: https://repo-prod.prod.sagebase.org/repo/v1.  Some examples below.
+Currently you may pass in any of the `GET`, `PUT`, `DELETE`, `POST`, rest calls covered under this endpoint: `https://repo-prod.prod.sagebase.org/repo/v1`.  You can see more details of the rest calls in our [rest docs](https://rest-docs.synapse.org/rest/).  Here is an example below that utilizes all the rest calls on the `/entity` endpoint.
 
 ```
 library(stringi)
