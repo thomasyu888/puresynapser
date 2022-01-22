@@ -2,7 +2,7 @@
 % Please edit documentation in R/login.R
 \name{login}
 \alias{login}
-\title{Synapse login}
+\title{Log into Synapse via personal access token}
 \usage{
 login(authtoken = NULL)
 }
@@ -13,7 +13,7 @@ login(authtoken = NULL)
 None
 }
 \description{
-Synapse login
+Log into Synapse via personal access token
 }
 \examples{
 login(authtoken="...")

@@ -1,5 +1,4 @@
-
-#' Synapse login
+#' Log into Synapse via personal access token
 #'
 #' @param authtoken Synapse PAT
 #'
