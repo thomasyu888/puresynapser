@@ -31,10 +31,9 @@ rest_PUT <- function(path, body) {
   if (!httr::status_code(resp) %in% c(200, 201)) {
     stop(
       sprintf(
-        "Synapse rest GET request failed [%s]\n%s\n<%s>",
+        "Synapse rest GET request failed [%s]\n%s",
         httr::status_code(resp),
-        parsed$message,
-        parsed$documentation_url
+        parsed$reason
       ),
       call. = FALSE
     )
