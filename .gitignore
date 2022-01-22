@@ -4,3 +4,4 @@ lock/
 python/
 staging/
 .R*
+.Rproj.user

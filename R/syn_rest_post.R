@@ -21,8 +21,9 @@ rest_POST <- function(path, body) {
                           hostname="repo-prod.prod.sagebase.org/repo/v1",
                           path = path)
 
-  resp <- httr::POST(url, ua, body = body(),
-                     httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
+  resp <- httr::POST(url, ua, body = body,
+                     httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)),
+                     encode = "json")
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return json", call. = FALSE)
   }
