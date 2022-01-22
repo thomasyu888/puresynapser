@@ -18,5 +18,5 @@ Synapse API class
 Synapse rest PUT command
 }
 \examples{
-rest_PUT("entity/syn26896636", body=list(...))
+rest_PUT("entity/syn26896636", body = list(...))
 }

@@ -27,6 +27,10 @@ Currently you may pass in any of the `GET`, `PUT`, `DELETE`, `POST`, rest calls 
 library(stringi)
 library(puresynapser)
 # Create a project
+# Use SYNAPSE_AUTH_TOKEN env var
+puresynapser::login()
+# or specify PAT here.
+# puresynapser::login(authtoken="...")
 project_name = paste0("test-project-", stringi::stri_rand_strings(1, 30))
 project_resp = puresynapser::rest_POST("entity",
                                        body=list(name = project_name,

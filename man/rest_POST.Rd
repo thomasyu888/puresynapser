@@ -18,7 +18,9 @@ Synapse API class
 Synapse rest POST command
 }
 \examples{
-rest_POST("entity", body=list(name = "test-me-now",
-                              parentId="syn4990358",
-                              concreteType="org.sagebionetworks.repo.model.Folder"))
+rest_POST("entity", body = list(
+  name = "test-me-now",
+  parentId = "syn4990358",
+  concreteType = "org.sagebionetworks.repo.model.Folder"
+))
 }

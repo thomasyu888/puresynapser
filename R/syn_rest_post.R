@@ -31,7 +31,8 @@ rest_POST <- function(path, body) {
   resp <- httr::RETRY("POST", url, ua,
     body = body,
     httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)),
-    encode = "json"
+    encode = "json",
+    terminate_on=c(401, 400)
   )
 
   if (httr::http_type(resp) != "application/json") {

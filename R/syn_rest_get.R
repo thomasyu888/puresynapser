@@ -1,6 +1,6 @@
 # set a user agent
 ua <- httr::user_agent("https://github.com/thomasyu888/puresynapser")
-synapse_pat <- Sys.getenv("SYNAPSE_AUTH_TOKEN")
+# synapse_pat <- Sys.getenv("SYNAPSE_AUTH_TOKEN")
 
 #' Synapse REST GET command
 #'
@@ -23,7 +23,8 @@ rest_GET <- function(path) {
   #                   httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
   resp <- httr::RETRY(
     "GET", url, ua,
-    httr::add_headers(Authorization = paste0("Bearer ", synapse_pat))
+    httr::add_headers(Authorization = paste0("Bearer ", syn_global$synapse_pat)),
+    terminate_on=c(401, 400)
   )
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return json", call. = FALSE)
