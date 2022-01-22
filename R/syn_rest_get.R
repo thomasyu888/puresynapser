@@ -20,7 +20,7 @@ rest_GET <- function(path) {
   resp <- httr::RETRY(
     "GET", url, syn_global$ua,
     httr::add_headers(Authorization = paste0("Bearer ", syn_global$synapse_pat)),
-    terminate_on=c(401, 400)
+    terminate_on = c(401, 400)
   )
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return json", call. = FALSE)
