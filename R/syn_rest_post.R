@@ -1,6 +1,6 @@
 # set a user agent
 ua <- httr::user_agent("https://github.com/thomasyu888/puresynapser")
-synapse_pat = Sys.getenv("SYNAPSE_AUTH_TOKEN")
+synapse_pat <- Sys.getenv("SYNAPSE_AUTH_TOKEN")
 
 #' Synapse rest POST command
 #'
@@ -13,21 +13,26 @@ synapse_pat = Sys.getenv("SYNAPSE_AUTH_TOKEN")
 #' @export
 #'
 #' @examples
-#' rest_POST("entity", body=list(name = "test-me-now",
-#'                               parentId="syn4990358",
-#'                               concreteType="org.sagebionetworks.repo.model.Folder"))
+#' rest_POST("entity", body = list(
+#'   name = "test-me-now",
+#'   parentId = "syn4990358",
+#'   concreteType = "org.sagebionetworks.repo.model.Folder"
+#' ))
 rest_POST <- function(path, body) {
   url <- httr::modify_url("https://repo-prod.prod.sagebase.org/repo/v1",
-                          hostname="repo-prod.prod.sagebase.org/repo/v1",
-                          path = path)
+    hostname = "repo-prod.prod.sagebase.org/repo/v1",
+    path = path
+  )
 
-#   resp <- httr::POST(url, ua, body = body,
-#                      httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)),
-#                      encode = "json")
+  #   resp <- httr::POST(url, ua, body = body,
+  #                      httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)),
+  #                      encode = "json")
 
-  resp <- httr::RETRY("POST", url, ua, body = body,
-                      httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)),
-                      encode = "json")
+  resp <- httr::RETRY("POST", url, ua,
+    body = body,
+    httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)),
+    encode = "json"
+  )
 
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return json", call. = FALSE)
@@ -53,6 +58,5 @@ rest_POST <- function(path, body) {
       response = resp
     ),
     class = "synapse_api"
-
   )
 }

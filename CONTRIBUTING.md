@@ -53,14 +53,24 @@ More details on how to use [renv](https://rstudio.github.io/renv/articles/renv.h
     git push --set-upstream origin GH-123-add-some-new-feature
     ```
 
-You should now be able to see the branch on GitHub. Make commits as you deem necessary. It helps to provide useful commit messages - a commit message saying 'Update' is a lot less helpful than saying 'Remove X parameter because it was unused'.
+    You should now be able to see the branch on GitHub. Make commits as you deem necessary. It helps to provide useful commit messages - a commit message saying 'Update' is a lot less helpful than saying 'Remove X parameter because it was unused'.
 
     ```
     git commit changed_file.txt -m "Remove X parameter because it was unused"
     git push
     ```
 
+1. (Make sure you have follow instructions in "Install dependencies") Make sure to run the auto R code formatter, styler.
+
+    ```
+    styler::style_pkg(".")
+    ```
+
 1. (Make sure you have follow instructions in "Install dependencies") Once you have made your additions or changes, make sure you write tests and run the test suite.  More information on testing below.
+
+    ```
+    testthat...
+    ```
 
 1. Once you have completed all the steps above, in Github, create a pull request from the feature branch of your fork to the `develop` branch of thomasyu888/puresynapser.
 
