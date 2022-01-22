@@ -6,7 +6,7 @@ This is a proof of concept Synapse R client.  There are other iterations of the 
 * [synapserprototype](https://github.com/thomasyu888/synapserprototype) - This is a prototype of the client using reticulate + synapse python client.
 * [synr-sdk-client](https://github.com/thomasyu888/synr-sdk-client) - This is an openAPI auto generated R client using the manually created [synapse openapi](https://github.com/Sage-Bionetworks/synapse-rest-openapi)
 
-## usage
+## Usage
 
 This is how you can install the package:
 ```
@@ -50,3 +50,6 @@ changed_ent = puresynapser::rest_PUT(paste0("entity/", folder$content$id),
 # Delete the project
 puresynapser::rest_DELETE(paste0("entity/", project_resp$content$id))
 ```
+
+## Contributing
+Want to contribute?  Please read our [contributing guide](CONTRIBUTING.md)
