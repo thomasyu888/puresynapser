@@ -1,5 +1,5 @@
 # puresynapser
-This is an attempt at creating a pure R package
+This is an attempt at creating a pure Synapse R package
 
 ## usage
 
