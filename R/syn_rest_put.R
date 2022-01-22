@@ -13,7 +13,7 @@ synapse_pat = Sys.getenv("SYNAPSE_AUTH_TOKEN")
 #' @export
 #'
 #' @examples
-#' rest_PUT("entity/syn26896636", body=list(name = "change-my-name"))
+#' rest_PUT("entity/syn26896636", body=list(...))
 rest_PUT <- function(path, body) {
   url <- httr::modify_url("https://repo-prod.prod.sagebase.org/repo/v1",
                           hostname="repo-prod.prod.sagebase.org/repo/v1",
