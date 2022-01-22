@@ -1,7 +1,3 @@
-# set a user agent
-ua <- httr::user_agent("https://github.com/thomasyu888/puresynapser")
-# synapse_pat <- Sys.getenv("SYNAPSE_AUTH_TOKEN")
-
 #' Synapse REST GET command
 #'
 #' @param path Path to synapse endpoint
@@ -22,7 +18,7 @@ rest_GET <- function(path) {
   # resp <- httr::GET(url, ua,
   #                   httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
   resp <- httr::RETRY(
-    "GET", url, ua,
+    "GET", url, syn_global$ua,
     httr::add_headers(Authorization = paste0("Bearer ", syn_global$synapse_pat)),
     terminate_on=c(401, 400)
   )

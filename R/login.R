@@ -14,7 +14,7 @@ login <- function(authtoken=NULL) {
     authtoken <- Sys.getenv("SYNAPSE_AUTH_TOKEN")
   }
 
-  if (synapse_pat == "") {
+  if (authtoken == "") {
     stop('SYNAPSE_AUTH_TOKEN environmental variable not set')
   }
   # Set global env
