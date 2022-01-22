@@ -10,7 +10,7 @@ rest_GET(path)
 \item{path}{Path to synapse endpoint}
 }
 \value{
-S3 object that is the same as the concreteType returned from Synapse.
+Synapse API class
 }
 \description{
 Synapse REST GET command

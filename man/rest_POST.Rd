@@ -12,7 +12,7 @@ rest_POST(path, body)
 \item{body}{Request Body}
 }
 \value{
-S3 object that is the same as the concreteType returned from Synapse.
+Synapse API class
 }
 \description{
 Synapse rest POST command

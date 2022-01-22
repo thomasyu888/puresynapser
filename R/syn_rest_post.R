@@ -7,7 +7,7 @@ synapse_pat = Sys.getenv("SYNAPSE_AUTH_TOKEN")
 #' @param path Path to synapse endpoint
 #' @param body Request Body
 #'
-#' @return S3 object that is the same as the concreteType returned from Synapse.
+#' @return Synapse API class
 #' @importFrom httr modify_url GET http_type status_code
 #' @importFrom jsonlite fromJSON
 #' @export
@@ -48,7 +48,7 @@ rest_POST <- function(path, body) {
       path = path,
       response = resp
     ),
-    class = gsub("org.sagebionetworks.repo.model.", "", parsed$concreteType)
+    class = "synapse_api"
 
   )
 }
