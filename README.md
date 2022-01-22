@@ -13,7 +13,7 @@ This is how you can install the package:
 install.packages("./")
 ```
 
-This package currently only works with the Synapse Personal Access token. You will have to set it as an environmental variable.
+This package currently only works with the Synapse Personal Access token. You will have to set it as an environmental variable, or you can add this to your .Renviron file.
 ```
 Sys.setenv(SYNAPSE_AUTH_TOKEN="tokenhere")
 ```

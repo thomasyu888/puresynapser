@@ -4,7 +4,7 @@ synapse_pat = Sys.getenv("SYNAPSE_AUTH_TOKEN")
 
 #' Synapse REST GET command
 #'
-#' @param path
+#' @param path Path to synapse endpoint
 #'
 #' @return S3 object that is the same as the concreteType returned from Synapse.
 #' @importFrom httr modify_url GET http_type status_code

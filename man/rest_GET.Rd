@@ -7,7 +7,7 @@
 rest_GET(path)
 }
 \arguments{
-\item{path}{}
+\item{path}{Path to synapse endpoint}
 }
 \value{
 S3 object that is the same as the concreteType returned from Synapse.
