@@ -20,7 +20,7 @@ rest_DELETE <- function(path) {
   resp <- httr::RETRY(
     "DELETE", url, syn_global$ua,
     httr::add_headers(Authorization = paste0("Bearer ", syn_global$synapse_pat)),
-    terminate_on = c(401, 400)
+    terminate_on = c(400, 401, 403, 404)
   )
 
   if (httr::status_code(resp) != 204) {
