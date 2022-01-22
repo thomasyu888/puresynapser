@@ -20,9 +20,6 @@ rest_DELETE <- function(path) {
 
   resp <- httr::DELETE(url, ua,
                        httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
-  if (httr::http_type(resp) != "application/json") {
-    stop("API did not return json", call. = FALSE)
-  }
 
   if (httr::status_code(resp) != 204) {
     parsed <- jsonlite::fromJSON(httr::content(resp, "text"), simplifyVector = FALSE)

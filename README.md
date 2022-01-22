@@ -18,9 +18,37 @@ This package currently only works with the Synapse Personal Access token. You wi
 Sys.setenv(SYNAPSE_AUTH_TOKEN="tokenhere")
 ```
 
-Try a command
+Currently you may pass in any of the `GET`, `PUT`, `DELETE`, `POST`, rest calls covered under this endpoint: https://repo-prod.prod.sagebase.org/repo/v1.  Some examples below.
 
 ```
+library(stringi)
 library(puresynapser)
-public_project = rest_GET("entity/syn7222066")
+# Create a project
+project_name = paste0("test-project-", stringi::stri_rand_strings(1, 30))
+project_resp = puresynapser::rest_POST("entity",
+                                       body=list(name = project_name,
+                                                 concreteType="org.sagebionetworks.repo.model.Project"))
+# Get the project
+project = rest_GET(paste0("entity/", project_resp$content$id))
+
+# Create a folder in the project
+folder = puresynapser::rest_POST("entity",
+                                 body=list(name = "test-me-now",
+                                           parentId=project$content$id,
+                                           concreteType="org.sagebionetworks.repo.model.Folder"))
+
+# Update the folder name
+changed_entity = list(
+  name = "change-my-name",
+  parentId = folder$content$parentId,
+  id = folder$content$id,
+  etag = folder$content$etag,
+  concreteType = folder$content$concreteType
+)
+changed_ent = puresynapser::rest_PUT(paste0("entity/", folder$content$id),
+                                     body=changed_entity)
+# Delete the project
+changed_ent = puresynapser::rest_DELETE(
+  paste0("entity/", project_resp$content$id)
+)
 ```
