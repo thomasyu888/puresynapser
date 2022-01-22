@@ -1,12 +1,16 @@
 Package: puresynapser
 Type: Package
-Title: What the Package Does (Title Case)
+Title: R client for Sage Bionetworks' Synapse API
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author@R: c(
+  person("Thomas", "Yu", "thomas.yu@sagebase.org",
+         role = c("aut", "cre")))
+Description:
+    This package lets you communicate with the Synapse platform to
+    create collaborative data analysis projects and access data using the R
+    programming language. Other Synapse clients exist for Python, Java,
+    and the web browser.
+License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
