@@ -2,7 +2,10 @@
 
 export(rest_GET)
 export(rest_POST)
+export(rest_PUT)
 importFrom(httr,GET)
+importFrom(httr,POST)
+importFrom(httr,PUT)
 importFrom(httr,http_type)
 importFrom(httr,modify_url)
 importFrom(httr,status_code)
