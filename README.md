@@ -1,5 +1,5 @@
 # puresynapser
-This is the Synapse R client.  There are other iterations of the client that can be found:
+This is a proof of concept Synapse R client.  There are other iterations of the client that can be found:
 
 * [synapser](https://github.com/Sage-Bionetworks/synapser) - Official Synapse R package currently.
 * [rSynapseClient](https://github.com/Sage-Bionetworks/rSynapseClient) - old pure R client. This package has been deprecated
