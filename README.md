@@ -48,7 +48,5 @@ changed_entity = list(
 changed_ent = puresynapser::rest_PUT(paste0("entity/", folder$content$id),
                                      body=changed_entity)
 # Delete the project
-changed_ent = puresynapser::rest_DELETE(
-  paste0("entity/", project_resp$content$id)
-)
+puresynapser::rest_DELETE(paste0("entity/", project_resp$content$id))
 ```
