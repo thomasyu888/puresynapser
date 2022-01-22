@@ -10,7 +10,10 @@ This is a proof of concept Synapse R client.  There are other iterations of the 
 
 This is how you can install the package:
 ```
+# Assuming you have the repository cloned locally
 install.packages("./")
+# install from github
+remotes::install_github("thomasyu888/puresynapser")
 ```
 
 This package currently only works with the Synapse Personal Access token. You will have to set it as an environmental variable, or you can add this to your .Renviron file.
