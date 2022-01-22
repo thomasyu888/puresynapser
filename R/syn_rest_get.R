@@ -6,7 +6,7 @@ synapse_pat = Sys.getenv("SYNAPSE_AUTH_TOKEN")
 #'
 #' @param path
 #'
-#' @return S3 structure
+#' @return S3 object that is the same as the concreteType returned from Synapse.
 #' @importFrom httr modify_url GET http_type status_code
 #' @importFrom jsonlite fromJSON
 #' @export
