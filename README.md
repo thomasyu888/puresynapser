@@ -1,5 +1,10 @@
 # puresynapser
-This is an attempt at creating a pure Synapse R package
+This is the Synapse R client.  There are other iterations of the client that can be found:
+
+* [synapser](https://github.com/Sage-Bionetworks/synapser) - Official Synapse R package currently.
+* [rSynapseClient](https://github.com/Sage-Bionetworks/rSynapseClient) - old pure R client. This package has been deprecated
+* [synapserprototype](https://github.com/thomasyu888/synapserprototype) - This is a prototype of the client using reticulate + synapse python client.
+* [synr-sdk-client](https://github.com/thomasyu888/synr-sdk-client) - This is an openAPI auto generated R client using the manually created [synapse openapi](https://github.com/Sage-Bionetworks/synapse-rest-openapi)
 
 ## usage
 
