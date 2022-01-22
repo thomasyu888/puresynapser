@@ -26,7 +26,7 @@ rest_GET <- function(path) {
 
   parsed <- jsonlite::fromJSON(httr::content(resp, "text"), simplifyVector = FALSE)
 
-  if (httr::status_code(resp) != c(200, 201)) {
+  if (!httr::status_code(resp) %in% c(200, 201)) {
     stop(
       sprintf(
         "Synapse rest GET request failed [%s]\n%s",
