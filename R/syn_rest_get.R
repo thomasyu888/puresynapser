@@ -18,8 +18,10 @@ rest_GET <- function(path) {
                           hostname="repo-prod.prod.sagebase.org/repo/v1",
                           path = path)
 
-  resp <- httr::GET(url, ua,
-                    httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
+  # resp <- httr::GET(url, ua,
+  #                   httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
+  resp <- httr::RETRY("GET", url, ua,
+                      httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return json", call. = FALSE)
   }

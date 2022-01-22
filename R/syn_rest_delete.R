@@ -18,8 +18,10 @@ rest_DELETE <- function(path) {
                           hostname="repo-prod.prod.sagebase.org/repo/v1",
                           path = path)
 
-  resp <- httr::DELETE(url, ua,
-                       httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
+  # resp <- httr::DELETE(url, ua,
+  #                      httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
+  resp <- httr::RETRY("DELETE", url, ua,
+                      httr::add_headers(Authorization = paste0("Bearer ", synapse_pat)))
 
   if (httr::status_code(resp) != 204) {
     parsed <- jsonlite::fromJSON(httr::content(resp, "text"), simplifyVector = FALSE)
