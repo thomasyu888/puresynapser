@@ -16,6 +16,6 @@ None
 Log into Synapse via personal access token
 }
 \examples{
-login(authtoken="...")
+login(authtoken = "...")
 login()
 }
